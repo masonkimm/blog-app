@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Blog App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4"><%=article.title%></h1>
+      <p class="mb-4 text-muted"><%=article.createdAt.toLocaleDateString()%></p>
+      <div class="mb-4 d-flex">
+        <a href="/" class="btn btn-secondary mr-2">All Articles</a>
+        <a href="/articles/edit/<%=article.id%>" class="btn btn-info mr-2"
+          >Edit</a
+        >
+        <form action="/articles/<%=article.id%>?_method=DELETE" method="POST">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+
+      <p class="mb-4">Description: <%=article.description%></p>
+      <!-- <p class="mb-4"><%=article.markdown%></p> -->
+      <div class=""><%- article.sanitizedHtml %></div>
+    </div>
+  </body>
+</html>

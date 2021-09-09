@@ -1,0 +1,36 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masonkimm/blog-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masonkimm/blog-app/issues"
+  },
+  "homepage": "https://github.com/masonkimm/blog-app#readme",
+  "dependencies": {
+    "dompurify": "^2.3.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsdom": "^17.0.0",
+    "marked": "^3.0.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
