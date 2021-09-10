@@ -90,3 +90,15 @@ action="/articles/<%=article.id%>?_method=DELETE" method="POST"
 - add "engines" : {
   "node": ">=10.0.0"
   }
+- Mongo ATLAS:
+
+```
+set up database and cluster
+database acess & network acess
+```
+
+- upload it to heroku
+- set up config vars {
+  MONGODB_URI: from mongo atlas
+  NODE_ENV: production
+  }
