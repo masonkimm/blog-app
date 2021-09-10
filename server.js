@@ -5,10 +5,13 @@ const articleRouter = require('./routes/articles');
 const Article = require('./models/article');
 const methodOverride = require('method-override');
 
-mongoose.connect('mongodb://localhost/blogApp', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  'mongodb+srv://Admin:password!23@blog-app.igedu.mongodb.net/blogApp?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 PORT = process.env.PORT || 3000;
 
