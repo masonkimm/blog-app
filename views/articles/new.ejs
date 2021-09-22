@@ -4,26 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Blog App</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="mb-3 mt-3">Create New Article</h1>
-      <form action="/articles" method="POST">
-        <%- include('_form_fields')%>
-      </form>
+    <div class="app">
+      <div class="container">
+        <h1 class="mb-4 mt-5">Create New Article</h1>
+        <form action="/articles" method="POST">
+          <%- include('_form_fields')%>
+        </form>
+      </div>
     </div>
   </body>
 </html>
