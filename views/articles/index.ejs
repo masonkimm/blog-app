@@ -10,38 +10,64 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Blog App</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="mb-3 mt-4">Blog Articles</h1>
-      <a href="/articles/new" class="btn btn-success mb-4"
-        >Create New Article</a
-      >
+    <div class="app">
+      <div class="container">
+        <h1 class="mb-3 mt-4" id="title">Blog Articles</h1>
+        <a href="/articles/new" class="btn mb-4" id="createBtn"
+          >Create New Article</a
+        >
 
-      <% articles.forEach((article)=>{ %>
-      <div class="card mb-4">
-        <div class="card-body">
-          <h2><%=article.title%></h2>
-          <p class="text-muted"><%=article.createdAt.toLocaleDateString() %></p>
-          <p><%=article.description%></p>
-          <div class="buttons mt-2 d-flex">
-            <a href="articles/<%=article.id %>" class="btn btn-primary mr-2"
-              >Read More</a
-            >
-            <a href="articles/edit/<%=article.id%>" class="btn btn-info mr-2"
-              >Edit</a
-            >
-            <form
-              action="/articles/<%=article.id%>?_method=DELETE"
-              method="POST"
-            >
-              <button class="btn btn-danger">Delete</button>
-            </form>
+        <% articles.forEach((article)=>{ %>
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2><%=article.title%></h2>
+            <p class="text-muted">
+              <%=article.createdAt.toLocaleDateString() %>
+            </p>
+            <p><%=article.description%></p>
+            <div class="buttons mt-2 d-flex">
+              <a
+                href="articles/<%=article.id %>"
+                class="btn mr-2"
+                id="readMoreBtn"
+                >Read More</a
+              >
+              <a
+                href="articles/edit/<%=article.id%>"
+                class="btn mr-2"
+                id="editBtn"
+                >Edit</a
+              >
+              <form
+                action="/articles/<%=article.id%>?_method=DELETE"
+                method="POST"
+              >
+                <button class="btn btn-danger" id="deleteBtn">
+                  <i class="far fa-trash-alt"></i>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
+        <% })%>
       </div>
-      <% })%>
     </div>
   </body>
 </html>
